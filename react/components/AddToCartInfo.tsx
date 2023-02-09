@@ -1,24 +1,31 @@
 import React from "react"
-import { useProduct } from "vtex.product-context"
-import { useOrderForm } from "vtex.order-manager/OrderForm"
-import ProductGroup from "./ProductGroup"
-import Totalizer from "./Totalizers"
 import ButtonGroup from "./ButtonGroup"
+import ProductGroup from "./ProductGroup"
+import Totalizers from "./Totalizers"
+import { useOrderForm } from "vtex.order-manager/OrderForm"
+import { generateBlockClass } from "@vtex/css-handles"
+import styles from "./styles.css"
 
-const AddToCartInfo = () => {
-  const productInfo = useProduct();
-  const { orderForm: {
-      items,
-      totalizers
-  } } = useOrderForm()
-  console.log("Este product tiene info:", productInfo)
-  console.log("Info del la orden:", items, totalizers)
+
+const AddToCartInfo = ({blockClass} : { blockClass: string }) => {
+
+  const container = generateBlockClass(styles.container, blockClass)
+
+  const { orderForm: { items } } = useOrderForm()
+
   return(
-    <>
-      <ProductGroup/>
-      <Totalizer/>
+    <div className={container}>
+      {
+        items.map((item: any, index: number) => {
+          console.log( item)
+          return (
+            <ProductGroup index={index} item={item} blockClass={blockClass}/>
+          )
+        })
+      }
+      <Totalizers/>
       <ButtonGroup/>
-    </>
+    </div>
   )
 }
 

@@ -1,11 +1,18 @@
 import React from "react";
+import { useOrderForm } from "vtex.order-manager/OrderForm"
 
-const Totalizer = () => {
+const Totalizers = () => {
+  const { orderForm: {
+    items,
+    totalizers
+} } = useOrderForm()
+
   return (
-    <div className="totalizer">
-      <a></a>
+    <div>
+        <p>tenemos {items.length} items en tu compra</p>
+        <p> Total: ${totalizers[0]?.value/100} </p>
     </div>
-  );
-};
+  )
+}
 
-export default Totalizer;
+export default Totalizers;
