@@ -3,11 +3,10 @@ import { useOrderForm } from "vtex.order-manager/OrderForm"
 import { useCssHandles } from 'vtex.css-handles'
 
 const Totalizers = () => {
-
   const CSS_HANDLES = [
-      'brands_title',
-      'brands_description',
-      'brands_wrapper'
+    "container__totalizer",
+    "items_total",
+    "items_totalizer"
   ]
   const handles = useCssHandles(CSS_HANDLES)
 
