@@ -1,20 +1,27 @@
 import React from "react";
-import { generateBlockClass } from "@vtex/css-handles"
-import styles from "./styles.css"
+import { useCssHandles } from 'vtex.css-handles'
 
-const ProductGroup = ({item, index, blockClass}: {item: any, index: number, blockClass: string}) => {
+const ProductGroup = ({item, index}: {item: any, index: number}) => {
+  const CSS_HANDLES = [
+    'container__products',
+    'container__image',
+    'imagen',
+    'container__productsDetails',
+    'paragraph__name',
+    'paragraph__price',
+    'paragraph__quantity'
+   ]
+  const handles = useCssHandles(CSS_HANDLES)
 
-const container__item = generateBlockClass(styles.container__item, blockClass)
-
-  return (
-    <div key={index} className={container__item}>
-      <div>
-        <img src={item.imageUrls.at1x}/>
+return (
+    <div key={index} className={handles["container__products"]}>
+      <div className={handles["container__image"]}>
+        <img src={item.imageUrls.at1x} className={handles["imagen"]}/>
       </div>
-      <div>
-        <p>{item.name}</p>
-        <p>{item.price/100}</p>
-        <p>Cantidad: {item.quantity}</p>
+      <div className={handles["container__productsDetails"]}>
+        <p className={handles["paragraph__name"]}>{item.name}</p>
+        <p className={handles["paragraph__price"]}>${item.price/100}</p>
+        <p className={handles["paragraph__quantity"]}>Cantidad: {item.quantity}</p>
       </div>
     </div>
   )
