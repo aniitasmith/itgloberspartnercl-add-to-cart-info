@@ -1,6 +1,6 @@
 📢 Use this project, [contribute](https://github.com/{OrganizationName}/{AppName}) to it or open issues to help evolve it using [Store Discussion](https://github.com/vtex-apps/store-discussion).
 
-# APP NAME
+# Add-to-cart-info
 
 <!-- DOCS-IGNORE:start -->
 <!-- ALL-CONTRIBUTORS-BADGE:START - Do not remove or modify this section -->
@@ -8,84 +8,68 @@
 <!-- ALL-CONTRIBUTORS-BADGE:END -->
 <!-- DOCS-IGNORE:end -->
 
-Under the app's name, you should explain the topic, giving a **brief description** of its **functionality** in a store when installed.
+Component that will display information when adding a product to the shopping cart.
 
-Next, **add media** (either an image of a GIF) with the rendered components, so that users can better understand how the app works in practice. 
-
-![Media Placeholder](https://user-images.githubusercontent.com/52087100/71204177-42ca4f80-227e-11ea-89e6-e92e65370c69.png)
+<img width="592" alt="image" src="https://user-images.githubusercontent.com/66226368/219804702-9fda24fe-df44-400e-a90e-1c24ceced106.png">
 
 ## Configuration 
 
-In this section, you first must **add the primary instructions** that will allow users to use the app's blocks in their store, such as:
+1. Import the Bullet Diagramation's app to your theme's dependencies in the manifest.json, for example:
+```json
+  dependencies: {
+    "{vendor}.add-to-cart-info": "0.x"
+  }
+ ```
+ 
+ 2. Add the list-context block to the store-theme. For example:
+```json
+  "modal-layout#add-to-cart-info":{
+    "title": "Modal layout Product",
+    "props": {
+      "blockClass":"product__modal-layout"
+    },
+    "children": [
+      "modal-header#add-to-cart-info",
+      "rich-text#modal-add-to-car-info",
+      "add-to-cart-info"
+    ]
+  }
+   ```
 
-1. Adding the app as a theme dependency in the `manifest.json` file;
-2. Declaring the app's main block in a given theme template or inside another block from the theme.
-
-Remember to add a table with all blocks exported by the app and their descriptions. You can verify an example of it on the [Search Result documentation](https://vtex.io/docs/components/all/vtex.search-result@3.56.1/). 
-
-Next, add the **props table** containing your block's props. 
-
-If the app exports more than one block, create several tables - one for each block. For example:
-
-### `block-1` props
-
-| Prop name    | Type            | Description    | Default value                                                                                                                               |
-| ------------ | --------------- | --------------------------------------------------------------------------------------------------------------------------------------------- | ---------- | 
-| `XXXXX`      | `XXXXXX`       | XXXXXXXX         | `XXXXXX`        |
-
-
-### `block-2` props
-
-| Prop name    | Type            | Description    | Default value                                                                                                                               |
-| ------------ | --------------- | --------------------------------------------------------------------------------------------------------------------------------------------- | ---------- | 
-| `XXXXX`      | `XXXXXX`       | XXXXXXXX         | `XXXXXX`        |
-
-Prop types are: 
-
-- `string` 
-- `enum` 
-- `number` 
-- `boolean` 
-- `object` 
-- `array` 
-
-When documenting a prop whose type is `object` or `array` another prop table will be needed. You can create it following the example below:
-
-- `propName` object:
+### list-context.bullet-group props
 
 | Prop name    | Type            | Description    | Default value                                                                                                                               |
-| ------------ | --------------- | --------------------------------------------------------------------------------------------------------------------------------------------- | ---------- | 
-| `XXXXX`      | `XXXXXX`       | XXXXXXXX         | `XXXXXX`        |
+| ------------ | --------------- | --------------------------------------------------------------------- | ---------- | 
+| `bullet`        | `Array`       | Define the bullet array to render in the list-context       | `undefined`              |
 
 
-Remember to also use this Configuration section to  **showcase any necessary disclaimer** related to the app and its blocks, such as the different behavior it may display during its configuration. 
+### bullets props
 
-## Modus Operandi *(not mandatory)*
+| Prop name    | Type            | Description    | Default value                                                                                                                               |
+| ------------ | --------------- | --------------------------------------------------------------------- | ---------- | 
+| `img`        | `String`       | Define the image to render in the list-context       | `undefined`              |
+| `titleBullet`        | `String`       | Define the title to render in the list-context       | `undefined`              |
+| `Link`        | `LinkProps`       |  Define the url to render in the list-context       | `undefined`              |
 
-There are scenarios in which an app can behave differently in a store, according to how it was added to the catalog, for example. It's crucial to go through these **behavioral changes** in this section, allowing users to fully understand the **practical application** of the app in their store.
-
-If you feel compelled to give further details about the app, such as it's **relationship with the VTEX admin**, don't hesitate to use this section. 
 
 ## Customization
 
-The first thing that should be present in this section is the sentence below, showing users the recipe pertaining to CSS customization in apps:
-
-`In order to apply CSS customizations in this and other blocks, follow the instructions given in the recipe on [Using CSS Handles for store customization](https://vtex.io/docs/recipes/style/using-css-handles-for-store-customization).`
-
-Thereafter, you should add a single column table with the available CSS handles for the app, like the one below. Note that the Handles must be ordered alphabetically.
-
 | CSS Handles |
 | ----------- | 
-| `XXXXX` | 
-| `XXXXX` | 
-| `XXXXX` | 
-| `XXXXX` | 
-| `XXXXX` |
-
-
-If there are none, add the following sentence instead:
-
-`No CSS Handles are available yet for the app customization.`
+|`container_Buttons`|
+|`button1`|
+|`button2`|
+| `container__products` | 
+| `container__image` | 
+| `imagen` | 
+| `container__productsDetails` | 
+|`paragraph__name `|
+|` paragraph__price`|
+|`paragraph__quantity `|
+|`container__totalizer `|
+|`items_total `|
+|`items_totalizer `|
+|` `|
 
 <!-- DOCS-IGNORE:start -->
 
