@@ -1,40 +1,38 @@
 📢 Use this project, [contribute](https://github.com/{OrganizationName}/{AppName}) to it or open issues to help evolve it using [Store Discussion](https://github.com/vtex-apps/store-discussion).
 
-# PDF Reader
+# Pdf-reader
 
 <!-- DOCS-IGNORE:start -->
 <!-- ALL-CONTRIBUTORS-BADGE:START - Do not remove or modify this section -->
 [![All Contributors](https://img.shields.io/badge/all_contributors-0-orange.svg?style=flat-square)](#contributors-)
 <!-- ALL-CONTRIBUTORS-BADGE:END -->
 <!-- DOCS-IGNORE:end -->
+The pdf-reader component allows you to view pdf-type documents so that they can be read on the page where it is invo
+ked.
 
-The pdf-reader component allows you to view pdf-type documents so that they can be read on the page where it is invoked.
-
-![image](https://user-images.githubusercontent.com/66226368/219808707-602e7acb-11ad-4638-aa80-af67f89ff7bb.png)
+<img width="592" alt="image" src="https://user-images.githubusercontent.com/66226368/219804702-9fda24fe-df44-400e-a90e-1c24ceced106.png">
 
 ## Configuration 
 
-1. Import the Bullet pdf-reader's app to your theme's dependencies in the manifest.json, for example:
+1. Import the Bullet add-to-cart-info's app to your theme's dependencies in the manifest.json, for example:
 ```json
   dependencies: {
-    "{vendor}.pdf-reader": "0.x"
+    "{vendor}.add-to-cart-info": "0.x"
   }
  ```
  
- 2. Add the pdf-reader block to the store-theme. For example:
+ 2. Add the add-to-cart-info block to the store-theme. For example:
 ```json
-  "flex-layout.col#component--pdf-reader":{
-    "children": [
-      "rich-text#cmponent04",
-      "pdf-reader"
-    ]
-  },
-  "pdf-reader":{
+  "modal-layout#add-to-cart-info":{
+    "title": "Modal layout Product",
     "props": {
-      "pdfURL":"assets/documents/sample.pdf" ,
-      "width": "100%",
-      "height":"800"
-    }
+      "blockClass":"product__modal-layout"
+    },
+    "children": [
+      "modal-header#add-to-cart-info",
+      "rich-text#modal-add-to-car-info",
+      "add-to-cart-info"
+    ]
   }
    ```
 
@@ -42,12 +40,21 @@ The pdf-reader component allows you to view pdf-type documents so that they can 
 
 | Prop name    | Type            | Description    | Default value                                                                                                                               |
 | ------------ | --------------- | --------------------------------------------------------------------- | ---------- | 
-| `pdfURL`        | `string`       |  Define the url to render in the pdf-reader file       | `undefined`              |
-| `width`        | `number`       | Define the width  to render pdf-reader apps      | `undefined`              |
-| `height`        | `number`       | Define the height to render pdf-reader apps         | `undefined`              |
+| `bullet`        | `Array`       | Define the bullet array to render in the list-context       | `undefined`              |
+
+
+### bullets props
+
+| Prop name    | Type            | Description    | Default value                                                                                                                               |
+| ------------ | --------------- | --------------------------------------------------------------------- | ---------- | 
+| `img`        | `String`       | Define the image to render in the list-context       | `undefined`              |
+| `titleBullet`        | `String`       | Define the title to render in the list-context       | `undefined`              |
+| `Link`        | `LinkProps`       |  Define the url to render in the list-context       | `undefined`              |
 
 
 ## Customization
+
+No CSS Handles are available yet for the app customization
 
 <!-- DOCS-IGNORE:start -->
 
@@ -74,3 +81,4 @@ Check out some documentation models that are already live:
 - [Condition Layout](https://vtex.io/docs/components/all/vtex.condition-layout@1.1.6/)
 - [Add To Cart Button](https://vtex.io/docs/components/content-blocks/vtex.add-to-cart-button@0.9.0/)
 - [Store Form](https://vtex.io/docs/components/all/vtex.store-form@0.3.4/)
+
