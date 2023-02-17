@@ -1,14 +1,14 @@
 📢 Use this project, [contribute](https://github.com/{OrganizationName}/{AppName}) to it or open issues to help evolve it using [Store Discussion](https://github.com/vtex-apps/store-discussion).
 
-# Pdf-reader
+# Add-to-cart-info
 
 <!-- DOCS-IGNORE:start -->
 <!-- ALL-CONTRIBUTORS-BADGE:START - Do not remove or modify this section -->
 [![All Contributors](https://img.shields.io/badge/all_contributors-0-orange.svg?style=flat-square)](#contributors-)
 <!-- ALL-CONTRIBUTORS-BADGE:END -->
 <!-- DOCS-IGNORE:end -->
-The pdf-reader component allows you to view pdf-type documents so that they can be read on the page where it is invo
-ked.
+
+Component that will display information when adding a product to the shopping cart.
 
 <img width="592" alt="image" src="https://user-images.githubusercontent.com/66226368/219804702-9fda24fe-df44-400e-a90e-1c24ceced106.png">
 
@@ -36,25 +36,24 @@ ked.
   }
    ```
 
-### list-context.bullet-group props
-
-| Prop name    | Type            | Description    | Default value                                                                                                                               |
-| ------------ | --------------- | --------------------------------------------------------------------- | ---------- | 
-| `bullet`        | `Array`       | Define the bullet array to render in the list-context       | `undefined`              |
-
-
-### bullets props
-
-| Prop name    | Type            | Description    | Default value                                                                                                                               |
-| ------------ | --------------- | --------------------------------------------------------------------- | ---------- | 
-| `img`        | `String`       | Define the image to render in the list-context       | `undefined`              |
-| `titleBullet`        | `String`       | Define the title to render in the list-context       | `undefined`              |
-| `Link`        | `LinkProps`       |  Define the url to render in the list-context       | `undefined`              |
-
-
 ## Customization
 
-No CSS Handles are available yet for the app customization
+| CSS Handles |
+| ----------- | 
+|`container_Buttons`|
+|`button1`|
+|`button2`|
+| `container__products` | 
+| `container__image` | 
+| `imagen` | 
+| `container__productsDetails` | 
+|`paragraph__name `|
+|` paragraph__price`|
+|`paragraph__quantity `|
+|`container__totalizer `|
+|`items_total `|
+|`items_totalizer `|
+|` `|
 
 <!-- DOCS-IGNORE:start -->
 
@@ -81,4 +80,3 @@ Check out some documentation models that are already live:
 - [Condition Layout](https://vtex.io/docs/components/all/vtex.condition-layout@1.1.6/)
 - [Add To Cart Button](https://vtex.io/docs/components/content-blocks/vtex.add-to-cart-button@0.9.0/)
 - [Store Form](https://vtex.io/docs/components/all/vtex.store-form@0.3.4/)
-
