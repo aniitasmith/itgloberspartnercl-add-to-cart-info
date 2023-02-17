@@ -1,6 +1,6 @@
 📢 Use this project, [contribute](https://github.com/{OrganizationName}/{AppName}) to it or open issues to help evolve it using [Store Discussion](https://github.com/vtex-apps/store-discussion).
 
-# Add-to-cart-info
+# PDF Reader
 
 <!-- DOCS-IGNORE:start -->
 <!-- ALL-CONTRIBUTORS-BADGE:START - Do not remove or modify this section -->
@@ -8,52 +8,46 @@
 <!-- ALL-CONTRIBUTORS-BADGE:END -->
 <!-- DOCS-IGNORE:end -->
 
-Component that will display information when adding a product to the shopping cart.
+The pdf-reader component allows you to view pdf-type documents so that they can be read on the page where it is invoked.
 
-<img width="592" alt="image" src="https://user-images.githubusercontent.com/66226368/219804702-9fda24fe-df44-400e-a90e-1c24ceced106.png">
+![image](https://user-images.githubusercontent.com/66226368/219808707-602e7acb-11ad-4638-aa80-af67f89ff7bb.png)
 
 ## Configuration 
 
-1. Import the Bullet add-to-cart-info's app to your theme's dependencies in the manifest.json, for example:
+1. Import the Bullet pdf-reader's app to your theme's dependencies in the manifest.json, for example:
 ```json
   dependencies: {
-    "{vendor}.add-to-cart-info": "0.x"
+    "{vendor}.pdf-reader": "0.x"
   }
  ```
  
- 2. Add the add-to-cart-info block to the store-theme. For example:
+ 2. Add the pdf-reader block to the store-theme. For example:
 ```json
-  "modal-layout#add-to-cart-info":{
-    "title": "Modal layout Product",
-    "props": {
-      "blockClass":"product__modal-layout"
-    },
+  "flex-layout.col#component--pdf-reader":{
     "children": [
-      "modal-header#add-to-cart-info",
-      "rich-text#modal-add-to-car-info",
-      "add-to-cart-info"
+      "rich-text#cmponent04",
+      "pdf-reader"
     ]
+  },
+  "pdf-reader":{
+    "props": {
+      "pdfURL":"assets/documents/sample.pdf" ,
+      "width": "100%",
+      "height":"800"
+    }
   }
    ```
 
-## Customization
+### list-context.bullet-group props
 
-| CSS Handles |
-| ----------- | 
-|`container_Buttons`|
-|`button1`|
-|`button2`|
-| `container__products` | 
-| `container__image` | 
-| `imagen` | 
-| `container__productsDetails` | 
-|`paragraph__name `|
-|` paragraph__price`|
-|`paragraph__quantity `|
-|`container__totalizer `|
-|`items_total `|
-|`items_totalizer `|
-|` `|
+| Prop name    | Type            | Description    | Default value                                                                                                                               |
+| ------------ | --------------- | --------------------------------------------------------------------- | ---------- | 
+| `pdfURL`        | `string`       |  Define the url to render in the pdf-reader file       | `undefined`              |
+| `width`        | `number`       | Define the width  to render pdf-reader apps      | `undefined`              |
+| `height`        | `number`       | Define the height to render pdf-reader apps         | `undefined`              |
+
+
+## Customization
 
 <!-- DOCS-IGNORE:start -->
 
