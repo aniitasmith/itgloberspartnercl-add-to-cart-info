@@ -36,22 +36,6 @@ Component that will display information when adding a product to the shopping ca
   }
    ```
 
-### list-context.bullet-group props
-
-| Prop name    | Type            | Description    | Default value                                                                                                                               |
-| ------------ | --------------- | --------------------------------------------------------------------- | ---------- | 
-| `bullet`        | `Array`       | Define the bullet array to render in the list-context       | `undefined`              |
-
-
-### bullets props
-
-| Prop name    | Type            | Description    | Default value                                                                                                                               |
-| ------------ | --------------- | --------------------------------------------------------------------- | ---------- | 
-| `img`        | `String`       | Define the image to render in the list-context       | `undefined`              |
-| `titleBullet`        | `String`       | Define the title to render in the list-context       | `undefined`              |
-| `Link`        | `LinkProps`       |  Define the url to render in the list-context       | `undefined`              |
-
-
 ## Customization
 
 | CSS Handles |
