@@ -40,7 +40,7 @@ Component that will display information when adding a product to the shopping ca
 
 In order to apply CSS customizations in this and other blocks, follow the instructions given in the recipe on [Using CSS Handles for store customization](https://vtex.io/docs/recipes/style/using-css-handles-for-store-customization).
 
-| CSS Handles |
+| CSS Handles  |
 | ----------- | 
 |`container_Buttons`|
 |`button1`|
