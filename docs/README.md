@@ -4,7 +4,7 @@
 
 <!-- DOCS-IGNORE:start -->
 <!-- ALL-CONTRIBUTORS-BADGE:START - Do not remove or modify this section -->
-[![All Contributors](https://img.shields.io/badge/all_contributors-0-orange.svg?style=flat-square)](#contributors-)
+![All Contributors](https://img.shields.io/badge/all_contributors-1-orange.svg?style=flat-square)
 <!-- ALL-CONTRIBUTORS-BADGE:END -->
 <!-- DOCS-IGNORE:end -->
 
@@ -23,6 +23,16 @@ Component that will display information when adding a product to the shopping ca
  
  2. Add the add-to-cart-info block to the store-theme. For example:
 ```json
+  "modal-trigger#add-to-cart-info":{
+    "title": "Modal Trigger Product",
+    "children": [
+      "modal-layout#add-to-cart-info"
+    ],
+    "props": {
+      "trigger": "load-session",
+      "customPixelEventName": "addToCart"
+    }
+  },
   "modal-layout#add-to-cart-info":{
     "title": "Modal layout Product",
     "props": {
